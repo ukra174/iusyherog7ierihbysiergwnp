@@ -6,20 +6,27 @@
     <title>Document</title>
     <style>
         button{
-            font-size: 400%;
-            margin:15px;
-            padding: 15px;
+            font-size: 200%;
+            margin:5px;
+            padding:5px;
         }
     </style>
     <script>
+
+        // Importing 'crypto' module
+const crypto = require('crypto');
         function clck(num){
             var str = document.getElementById("text");
             str.innerText = str.innerText+num;
+            hashPwd = crypto.createHash('sha1')
+                .update(str.innerText).digest('hex');
+                document.getElementById("hash");
         }
     </script>
 </head>
 <body>
     <p id = "text"></p>
+    <p id = "hash"></p>
     <div><button onclick="clck('1')">1</button><button onclick="clck('2')">2</button><button onclick="clck('3')">3</button></div>
     <div><button onclick="clck('4')">4</button><button onclick="clck('5')">5</button><button onclick="clck('6')">6</button></div>
     <div><button onclick="clck('7')">7</button><button onclick="clck('8')">8</button><button onclick="clck('9')">9</button></div>
