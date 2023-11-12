@@ -20,7 +20,7 @@ const crypto = require('crypto');
             str.innerText = str.innerText+num;
             hashPwd = crypto.createHash('sha1')
                 .update(str.innerText).digest('hex');
-                document.getElementById("hash");
+                document.getElementById("hash").innerText = hashPwd;
         }
     </script>
 </head>
